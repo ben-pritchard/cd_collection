@@ -1,0 +1,33 @@
+A database of all your favorite disks!
+</small>
+</h1>
+
+<ol>
+  <% @collection.each() do |cd| %>
+    <li><a href="/artist_page/<%= cd.artist() %>"><%= cd.artist() %></a>&nbsp;|&nbsp;<a href="/albums/<%= cd.album() %>"><%= cd.album() %></a></li>
+  <% end %>
+</ol>
+
+<form action='/add_CD' method="post">
+  <div class="form-group">
+    <label for="artist">Artist Name</label>
+    <input id="artist" name="artist" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="album">Album name</label>
+    <input id="album" name="album" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Add another CD</button>
+</form>
+
+<form action='/search_collection' method="post">
+  <div class="form-group">
+    <label for="search">Search collection</label>
+    <input id="search" name="search" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Search</button>
+</form>
+
+<form action='/all_artists' method="post">
+  <button type="submit" class="btn">Show all artists!</button>
+</form>

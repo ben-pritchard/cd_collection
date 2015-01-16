@@ -43,4 +43,12 @@ describe(CD) do
       expect(CD.all()).to(eq([]))
     end
   end
+
+  describe("#album") do
+    it("Returns the name of an album") do
+      cd1 = CD.new({:artist => "Ham Wizards", :album => "Linux Actually Does Matter"})
+      cd2 = CD.new({:album => "Linux Actually Does NOT Matter"})
+      expect(cd2.album()).to(eq("Linux Actually Does NOT Matter"))
+    end
+  end
 end

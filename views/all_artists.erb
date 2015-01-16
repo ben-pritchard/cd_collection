@@ -1,0 +1,13 @@
+A list of all artists represented in your collection!
+</small>
+</h1>
+
+<ul>
+  <% printed = [] %>
+  <% @collection.each() do |cd| %>
+    <% if printed.include?(cd.artist()) != true %>
+      <li><a href="/artists/<%= cd.artist() %>"><%= cd.artist() %></a></li>
+      <% printed.push(cd.artist()) %>
+    <% end %>
+  <% end %>
+</ul>

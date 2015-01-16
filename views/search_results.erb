@@ -1,0 +1,9 @@
+The results are in!
+</small>
+</h1>
+
+<ul>
+  <% @results.each() do |cd| %>
+    <li><a href="/artist_page"><%= cd.artist() %></a>&nbsp;|&nbsp;<a href="/albums/<%= cd.album() %>"><%= cd.album() %></a></li>
+  <% end %>
+</ul>
